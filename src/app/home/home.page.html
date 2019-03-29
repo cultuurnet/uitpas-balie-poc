@@ -1,14 +1,55 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8" offset="2">
+        <location-header></location-header>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" offset="2">
+        <ion-img [src]="'../../assets/uitpas.svg'"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header text-center>
+            <ion-card-title>Met je smartphone</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li>Ga naar <strong>uitpas.be</strong></li>
+              <li>Log in met je UiTPAS</li>
+              <li>Scan deze code</li>
+            </ul>
+            <div class="qr-code">
+              <ion-img [src]="'https://via.placeholder.com/350'"></ion-img>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header text-center>
+            <ion-card-title>Met je kaart</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li>Hou je UiTPAS tegen het symbool op dit toestel</li>
+            </ul>
+            <div class="qr-code">
+              <ion-img [src]="'https://via.placeholder.com/350'"></ion-img>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center>
+      <ion-col size="12">
+        <h2>UiTPAS is de ideale vrijetijdspas</h2>
+        <ion-button fill="outline">Ontdek UiTPAS</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
 </ion-content>

@@ -18,6 +18,10 @@ const routes: Routes = [
             }
         ],*/
     },
+    {
+        path: 'punten',
+        loadChildren: './punten/punten.module#PuntenPageModule'
+    },
 ];
 
 @NgModule({

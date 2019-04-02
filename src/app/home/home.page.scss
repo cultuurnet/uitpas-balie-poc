@@ -1,3 +1,13 @@
-ul {
-  color: var(--ion-color-primary);
+h1.incentive {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.more {
+  h2 {
+    font-size: 30px;
+  }
+  ion-button {
+    text-transform: none;
+  }
 }

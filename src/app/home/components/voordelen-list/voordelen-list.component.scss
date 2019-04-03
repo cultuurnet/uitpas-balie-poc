@@ -1,0 +1,14 @@
+p {
+  color: var(--ion-text-color-dark);
+  font-size: 22px;
+}
+
+.rounded-image {
+  img {
+     border-radius: 50% !important;
+   }
+}
+
+hr {
+  color: var(--ion-text-color-dark);
+}

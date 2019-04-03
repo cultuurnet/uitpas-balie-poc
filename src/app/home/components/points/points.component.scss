@@ -1,0 +1,19 @@
+.points {
+  color: var(--ion-color-primary-contrast);
+  margin: 0;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  span.amount {
+    font-weight: 700;
+    font-size: 2em;
+  }
+}
+
+.points-component-no-string {
+  .points {
+    top: 41%;
+  }
+}

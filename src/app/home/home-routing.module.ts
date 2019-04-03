@@ -6,17 +6,6 @@ const routes: Routes = [
     {
         path: '',
         component: HomePage,
-        /*children: [
-            {
-                path: 'discover',
-                children: [
-                    {
-                        path: '',
-                        loadChildren: './discover/discover.module#DiscoverPageModule'
-                    }
-                ]
-            }
-        ],*/
     },
     {
         path: 'punten',

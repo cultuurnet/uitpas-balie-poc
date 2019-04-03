@@ -5,21 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PuntenPage } from './punten.page';
-import { ComponentsModule } from '../components/components.module';
+import { ContactPage } from './contact.page';
+import {ComponentsModule} from '../../components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: PuntenPage,
-  },
-  {
-    path: 'omruilen',
-    loadChildren: './omruilen/omruilen.module#OmruilenPageModule'
-  },
-  {
-    path: 'contact',
-    loadChildren: './punten/contact/contact.module#ContactPageModule'
+    component: ContactPage
   }
 ];
 
@@ -31,6 +23,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PuntenPage]
+  declarations: [ContactPage]
 })
-export class PuntenPageModule {}
+export class ContactPageModule {}

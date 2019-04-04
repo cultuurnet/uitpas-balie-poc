@@ -29,7 +29,7 @@ export function initializeApp(appConfig: AppConfig) {
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AppConfig,
-    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true},
+    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true}
   ],
   bootstrap: [AppComponent]
 })

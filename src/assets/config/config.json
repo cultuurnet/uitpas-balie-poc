@@ -1,5 +1,5 @@
 {
-  "uitpasApi": "asdf",
-  "consumerKey": "",
-  "secret": ""
+  "uitpasApi": "https://test.uitid.be/uitid/rest",
+  "consumerKey": "eb98140b5749e1ac5ef7be46926d5dda",
+  "secret": "324098ed2e153badb3be0c0e4da51d41"
 }

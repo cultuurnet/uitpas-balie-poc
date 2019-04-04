@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AppConfig} from "../app.config";
+
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,11 +8,11 @@ import {AppConfig} from "../app.config";
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
-  protected apiServer = AppConfig.settings.uitpasApi;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.authenticate();
   }
 
 }

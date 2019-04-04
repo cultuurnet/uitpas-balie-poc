@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'contact',
-    loadChildren: './punten/contact/contact.module#ContactPageModule'
+    loadChildren: './contact/contact.module#ContactPageModule'
   }
 ];
 

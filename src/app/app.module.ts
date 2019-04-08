@@ -5,11 +5,12 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {AppConfig} from './app.config';
+import { HttpClientModule } from '@angular/common/http';
+import {TwitterService} from 'ng2-twitter-httpclient';
 
 export function initializeApp(appConfig: AppConfig) {
     return () => appConfig.load();
@@ -20,13 +21,14 @@ export function initializeApp(appConfig: AppConfig) {
   entryComponents: [],
   imports: [
       BrowserModule,
+      HttpClientModule,
       IonicModule.forRoot(),
-      AppRoutingModule,
-      HttpClientModule
+      AppRoutingModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    TwitterService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AppConfig,
     { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true}

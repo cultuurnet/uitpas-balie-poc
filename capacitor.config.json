@@ -1,0 +1,6 @@
+{
+  "appId": "be.uitpas.balie-cid",
+  "appName": "CID uitpas",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

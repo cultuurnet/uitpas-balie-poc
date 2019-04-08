@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+    <code>ACTION_SUCCEEDED</code>
+    <cultureEvent>
+        <cdbid>3d5d64f0-8aae-4dd6-8cd9-f0f86835890b</cdbid>
+        <checkinAllowed>true</checkinAllowed>
+        <gracePeriodMonths>0</gracePeriodMonths>
+        <locationId>9ccb6048-8324-4a2c-bcf0-7ca5e4546475</locationId>
+        <numberOfPoints>1</numberOfPoints>
+        <organiserId>28808C2F-0DB2-D2CF-F508ECB994D2505F</organiserId>
+        <organiserName>Muntpunt</organiserName>
+        <price>8.0</price>
+        <tariff>8.0</tariff>
+        <title>permanent muntpunt voor Stijn</title>
+    </cultureEvent>
+    <autodetected>false</autodetected>
+    <checkinFromDate>1554674400000</checkinFromDate>
+    <checkinCode>cut42m6w</checkinCode>
+</response>

@@ -1,5 +1,8 @@
 {
-  "name": "uitpas-balie-poc",
-  "integrations": {},
+  "name": "New Ionic App",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

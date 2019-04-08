@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 import {AuthService} from './auth.service';
+import {AppConfig} from '../app.config';
 
 @Component({
   selector: 'app-auth',
@@ -8,11 +10,17 @@ import {AuthService} from './auth.service';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  private apiServer = AppConfig.settings.uitpasApi;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+      private authService: AuthService,
+      private router: Router) { }
 
   ngOnInit() {
     this.authService.authenticate();
+    if (this.authService.isAuthenticated) {
+      this.router.navigateByUrl('/home');
+    }
   }
 
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
         path: 'punten',
         loadChildren: './punten/punten.module#PuntenPageModule'
     },
-    { path: 'discover', loadChildren: './home/discover/discover.module#DiscoverPageModule'}
+    { path: 'discover', loadChildren: './discover/discover.module#DiscoverPageModule'}
 ];
 
 @NgModule({

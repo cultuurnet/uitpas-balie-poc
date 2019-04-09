@@ -25,6 +25,30 @@ export class AuthService {
                 private http: HttpClient,
                 private xml2json: NgxXml2jsonService) {}
 
+    private parseXmlResponse(obj) {
+        const response = obj.response;
+        const cultureEvent = response.cultureEvent;
+        const eventResponse = new EventResponse(
+            response.code,
+            new CultureEvent(
+                cultureEvent.cdbid,
+                cultureEvent.checkinAllowed,
+                cultureEvent.gracePeriodMonths,
+                cultureEvent.locationId,
+                cultureEvent.numberOfPoints,
+                cultureEvent.organizerId,
+                cultureEvent.organizerName,
+                cultureEvent.price,
+                cultureEvent.tariff,
+                cultureEvent.title
+            ),
+            response.autodetect,
+            response.checkinFromDate,
+            response.checkinCode
+        );
+        return eventResponse;
+    }
+
     authenticate() {
 
         /*return this.api.get(
@@ -37,7 +61,11 @@ export class AuthService {
             {
                 token: '',
                 tokenSecret: ''
-            });*/
+            })
+            .subscribe(
+                data => console.log(data),
+                error => console.log(error)
+            );*/
 
         const xmlFile = 'assets/mocks/event.xml';
         return this.http.get(xmlFile, { responseType: 'text' })
@@ -47,33 +75,41 @@ export class AuthService {
                     const parser = new DOMParser();
                     const xml = parser.parseFromString(data, 'text/xml');
                     const obj = this.xml2json.xmlToJson(xml);
-                    const response = obj.response;
-                    const cultureEvent = response.cultureEvent;
-                    const eventResponse = new EventResponse(
-                        response.code,
-                        new CultureEvent(
-                            cultureEvent.cdbid,
-                            cultureEvent.checkinAllowed,
-                            cultureEvent.gracePeriodMonths,
-                            cultureEvent.locationId,
-                            cultureEvent.numberOfPoints,
-                            cultureEvent.organizerId,
-                            cultureEvent.organizerName,
-                            cultureEvent.price,
-                            cultureEvent.tariff,
-                            cultureEvent.title
-                        ),
-                        response.autodetect,
-                        response.checkinFromDate,
-                        response.checkinCode
-                    );
-                    this.balieEvent = eventResponse;
+                    this.balieEvent = this.parseXmlResponse(obj);
                 },
                 error => {
                     this.authenticated = false;
                     console.log('Error: ', error);
                 }
             );
+    }
+
+    getApiGetUrl(endpoint: string, query: object) {
+        return this.api.get(
+            this.url + endpoint,
+            query,
+            {
+                consumerKey: this.key,
+                consumerSecret: this.secret
+            },
+            {
+                token: '',
+                tokenSecret: ''
+            });
+    }
+
+    getApiPostUrl(endpoint: string, params: object) {
+        return this.api.post(
+            this.url + endpoint,
+            params,
+            {
+                consumerKey: this.key,
+                consumerSecret: this.secret
+            },
+            {
+                token: '',
+                tokenSecret: ''
+            });
     }
 
     getBalieEvent() {

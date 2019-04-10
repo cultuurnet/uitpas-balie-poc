@@ -10,7 +10,6 @@ import {AppConfig} from '../app.config';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
-  private apiServer = AppConfig.settings.uitpasApi;
 
   constructor(
       private authService: AuthService,

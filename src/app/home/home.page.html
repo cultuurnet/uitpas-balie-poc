@@ -2,12 +2,12 @@
   <ion-grid>
     <ion-row>
       <ion-col size="10" offset="1">
-        <location-header></location-header>
+        <location-header [loadedLocation]="event.organiserName"></location-header>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="8" offset="2">
-        <ion-img [src]="'../../assets/uitpas.svg'"></ion-img>
+        <ion-img [src]="'/assets/uitpas.svg'"></ion-img>
         <h1 text-center>Spaar een punt</h1>
       </ion-col>
     </ion-row>

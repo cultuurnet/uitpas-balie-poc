@@ -36,8 +36,8 @@ export class AuthService {
                 cultureEvent.gracePeriodMonths,
                 cultureEvent.locationId,
                 cultureEvent.numberOfPoints,
-                cultureEvent.organizerId,
-                cultureEvent.organizerName,
+                cultureEvent.organiserId,
+                cultureEvent.organiserName,
                 cultureEvent.price,
                 cultureEvent.tariff,
                 cultureEvent.title
@@ -50,32 +50,17 @@ export class AuthService {
     }
 
     authenticate() {
-
-        /*return this.api.get(
-            this.url + '/uitpas/cid/event',
-            {},
-            {
-                consumerKey: this.key,
-                consumerSecret: this.secret
-            },
-            {
-                token: '',
-                tokenSecret: ''
-            })
-            .subscribe(
-                data => console.log(data),
-                error => console.log(error)
-            );*/
+        // return this.getApiGetUrl('/uitpas/cid/event', {});
 
         const xmlFile = 'assets/mocks/event.xml';
         return this.http.get(xmlFile, { responseType: 'text' })
             .subscribe(
                 data => {
-                    this.authenticated = true;
                     const parser = new DOMParser();
                     const xml = parser.parseFromString(data, 'text/xml');
                     const obj = this.xml2json.xmlToJson(xml);
                     this.balieEvent = this.parseXmlResponse(obj);
+                    this.authenticated = true;
                 },
                 error => {
                     this.authenticated = false;

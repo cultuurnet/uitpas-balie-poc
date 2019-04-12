@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import {ComponentsModule} from './components/components.module';
-import {HomeRoutingModule} from "./home-routing.module";
+import {HomeRoutingModule} from './home-routing.module';
 
 @NgModule({
   imports: [

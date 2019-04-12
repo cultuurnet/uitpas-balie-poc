@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {AppConfig} from './app.config';
 import { HttpClientModule } from '@angular/common/http';
 import {TwitterService} from 'ng2-twitter-httpclient';
+import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
 export function initializeApp(appConfig: AppConfig) {
     return () => appConfig.load();
@@ -29,6 +30,8 @@ export function initializeApp(appConfig: AppConfig) {
     StatusBar,
     SplashScreen,
     TwitterService,
+    NFC,
+    Ndef,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AppConfig,
     { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true}

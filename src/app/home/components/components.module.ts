@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import {SmartphoneComponent} from './smartphone/smartphone.component';
 import {NfcComponent} from './nfc/nfc.component';
 import {PointsComponent} from './points/points.component';
-import {VoordelenListComponent} from "./voordelen-list/voordelen-list.component";
+import {VoordelenListComponent} from './voordelen-list/voordelen-list.component';
 
 @NgModule({
     imports: [

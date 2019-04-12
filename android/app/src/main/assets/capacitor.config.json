@@ -1,6 +1,11 @@
 {
-  "appId": "be.uitpas.balie-cid",
+  "appId": "be.uitpas.balie.cid",
   "appName": "CID uitpas",
   "bundledWebRuntime": false,
-  "webDir": "www"
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
 }

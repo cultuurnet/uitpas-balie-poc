@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package be.uitpas.balie.cid;
 
 import android.os.Bundle;
 
